@@ -12,7 +12,7 @@ object ApiConfig {
 
     // URL dasar untuk mengakses API Google Spreadsheet Apps Script.
     // Ganti BASE_URL ini dengan URL API deployment yang sesuai.
-    private const val BASE_URL = "https://script.google.com/macros/s/AKfycbxgadbOVbEVWslzIkc83R2lF-cZsJYWaYMlv7eXIpWo9CPndumK65n_82_Xjo9QOGCl/"
+    private const val BASE_URL = "API-URL-HERE"
 
     /**
      * Fungsi untuk menyediakan instance ApiService.
