@@ -1,0 +1,355 @@
+function doPost(e) {
+  var sheetId = 'SHEET ID HERE'; // Masukkan Sheet ID disini
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheetEditRequest = id.getSheetByName('Edit Request'); // Sheet for Edit Request
+  var sheetDataPekerja = id.getSheetByName('Data Pekerja'); // Sheet for Data Pekerja
+  
+  // Parameter umum
+  var nid = e.parameter.nid;
+  var nama = e.parameter.nama;
+  var birthdate = e.parameter.birthdate;
+  var phone = e.parameter.phone;
+  var posisi = e.parameter.posisi;
+  var kota = e.parameter.kota;
+  var provinsi = e.parameter.provinsi;
+  var password = e.parameter.password;
+  var riwayatproyek = e.parameter.riwayatproyek;
+  
+  // Handle "changepassword" action
+  if (e.parameter.action === 'changepassword') {
+    var oldPassword = e.parameter.oldpassword;
+    
+    // Cari data berdasarkan NID di sheet "Data Pekerja"
+    var dataRange = sheetDataPekerja.getDataRange();
+    var dataValues = dataRange.getValues();
+
+    // Iterasi setiap baris untuk mencari NID yang cocok
+    for (var i = 1; i < dataValues.length; i++) {
+      var row = dataValues[i];
+      if (row[0] == nid) { // Asumsi NID ada di kolom pertama (0)
+        var storedPassword = row[7]; // Asumsi password ada di kolom ke-8 (index 7)
+        
+        if (storedPassword === oldPassword) {
+          // Password cocok, tambahkan ke "Edit Request"
+          sheetEditRequest.appendRow([nid, nama, birthdate, phone, posisi, kota, provinsi, password, riwayatproyek]);
+          
+          var jsonObject = {
+            isSuccess: true,
+            statusCode: 200,
+            message: "Password berhasil diubah dan permintaan edit telah ditambahkan."
+          };
+        } else {
+          // Password lama tidak cocok
+          var jsonObject = {
+            isSuccess: false,
+            statusCode: 401,
+            message: "Password lama tidak cocok."
+          };
+        }
+        var JSONString = JSON.stringify(jsonObject);
+        var JSONOutput = ContentService.createTextOutput(JSONString);
+        JSONOutput.setMimeType(ContentService.MimeType.JSON);
+        return JSONOutput;
+      }
+    }
+    
+    // Jika NID tidak ditemukan
+    var jsonObject = {
+      isSuccess: false,
+      statusCode: 404,
+      message: "NID tidak ditemukan."
+    };
+    var JSONString = JSON.stringify(jsonObject);
+    var JSONOutput = ContentService.createTextOutput(JSONString);
+    JSONOutput.setMimeType(ContentService.MimeType.JSON);
+    return JSONOutput;
+  }
+
+  // Handle default action (misalnya "login" atau lainnya)
+  if (e.parameter.action === 'login') {
+    return handleLogin(e, sheetDataPekerja);
+  }
+
+  // Jika action lain yang tidak dihandle
+  var jsonObject = {
+    status: "Action tidak dikenali."
+  };
+
+  var JSONString = JSON.stringify(jsonObject);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  return JSONOutput;
+}
+
+
+function handleLogin(e, sheet) {
+  var nid = e.parameter.nid;
+  var password = e.parameter.password;
+
+  var data = sheet.getDataRange().getValues(); // Dapatkan semua data dari sheet
+  var headers = data[0]; // Asumsi baris pertama adalah header
+  var loginResult = null;
+
+  // Loop untuk mencari nid dan password yang sesuai
+  for (var i = 1; i < data.length; i++) {
+    var rowData = {};
+    for (var j = 0; j < headers.length; j++) {
+      rowData[headers[j]] = data[i][j].toString(); // Konversi semua data menjadi string untuk perbandingan
+    }
+
+    // Cek apakah nid dan password sesuai
+    if (rowData['nid'] === nid && rowData['password'] === password) {
+      loginResult = rowData; // Masukkan seluruh data rowData ke dalam loginResult
+      break; // Keluar dari loop jika ditemukan
+    }
+  }
+
+  // Menyiapkan response
+  var responseObject;
+  if (loginResult) {
+    responseObject = {
+      error: false,
+      message: "success",
+      loginResult: loginResult // Berisi seluruh data rowData
+    };
+  } else {
+    responseObject = {
+      error: true,
+      message: "Invalid nid or password"
+    };
+  }
+
+  var JSONString = JSON.stringify(responseObject);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+
+  return JSONOutput;
+}
+
+function doGet(e) {
+  var sheetId = '1SS8q9DZ_GarcBcTzyF87m0FlA_tfgmu6B7wNFoRk8Mo';
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheet = id.getSheetByName('Data Pekerja'); // Always use Data Pekerja for GET requests
+  var data = sheet.getDataRange().getValues();
+  
+  var jsonData = [];
+  var headers = data[0]; // Assume the first row contains headers
+
+  if (e.parameter.action === 'checkEditRequest') {
+    var sheetEditRequest = id.getSheetByName('Edit Request');
+    var data = sheetEditRequest.getDataRange().getValues();
+    var nid = e.parameter.nid;
+    
+    var isFound = data.some(function(row) {
+      return row[0] == nid; // Assuming nid is in the first column
+    });
+    
+    var responseObject = { exists: isFound };
+    var JSONString = JSON.stringify(responseObject);
+    var JSONOutput = ContentService.createTextOutput(JSONString);
+    JSONOutput.setMimeType(ContentService.MimeType.JSON);
+    return JSONOutput;
+  }
+  
+  if (e.parameter.nid) {
+    var nid = e.parameter.nid;
+    
+    for (var i = 1; i < data.length; i++) {
+      var rowData = {};
+      for (var j = 0; j < headers.length; j++) {
+        rowData[headers[j]] = data[i][j]; // Map headers to row data
+      }
+
+      if (rowData['nid'] == nid) {
+        jsonData.push(rowData);
+        break; // Exit the loop if we find the nid
+      }
+    }
+  } 
+  if (e.parameter.action === 'getTotalNasional') {
+    return getTotalNasional();
+  } else if (e.parameter.action === 'getDetailProvinsi') {
+    var nidProvinsi = e.parameter.nid;
+    return getDetailProvinsi(nidProvinsi);
+  } else if (e.parameter.action === 'getDetailKota') {
+    var nidKota = e.parameter.nid;
+    return getDetailKota(nidKota);
+  } else if (e.parameter.action === 'getProyek') {
+    return getProyek();
+  } else {
+    // If no nid provided, return all data
+    for (var i = 1; i < data.length; i++) {
+      var rowData = {};
+      for (var j = 0; j < headers.length; j++) {
+        rowData[headers[j]] = data[i][j]; // Map headers to row data
+      }
+      jsonData.push(rowData);
+    }
+  }
+
+  var JSONString = JSON.stringify(jsonData);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  
+  return JSONOutput;
+}
+
+function getProyek() {
+  var sheetId = '1SS8q9DZ_GarcBcTzyF87m0FlA_tfgmu6B7wNFoRk8Mo';
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheetProyek = id.getSheetByName('Proyek');
+
+  var data = sheetProyek.getDataRange().getValues(); // Mendapatkan semua data dari sheet Proyek
+
+  var jsonData = [];
+  var headers = data[0];
+
+  for (var i = 1; i < data.length; i++) {
+      var rowData = {};
+      for (var j = 0; j < headers.length; j++) {
+        rowData[headers[j]] = data[i][j]; // Map headers to row data
+      }
+      jsonData.push(rowData);
+    }
+
+  var JSONString = JSON.stringify(jsonData);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  
+  return JSONOutput;
+}
+
+function getTotalNasional() {
+  var sheetId = '1SS8q9DZ_GarcBcTzyF87m0FlA_tfgmu6B7wNFoRk8Mo';
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheetLokasi = id.getSheetByName('Lokasi');
+
+  var data = sheetLokasi.getDataRange().getValues(); // Mendapatkan semua data dari sheet Lokasi
+  var totalNasional = {
+    totalPekerja: 0,
+    totalWelder: 0,
+    totalFitter: 0,
+    totalHelper: 0,
+    totalMachinist: 0,
+    provinsi: []
+  };
+
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    var jumlahPekerjaProvinsi = parseInt(row[5]); // Kolom F (jumlah pekerja provinsi)
+
+    if (jumlahPekerjaProvinsi > 0) {
+      totalNasional.totalPekerja += jumlahPekerjaProvinsi;
+      totalNasional.totalWelder += parseInt(row[7]); // Kolom H
+      totalNasional.totalFitter += parseInt(row[8]); // Kolom I
+      totalNasional.totalHelper += parseInt(row[9]); // Kolom J
+      totalNasional.totalMachinist += parseInt(row[10]); // Kolom K
+
+      totalNasional.provinsi.push({
+        nid: row[0], // Kolom A (nid provinsi)
+        name: row[2], // Kolom C (nama provinsi)
+        latitude: row[3], // Kolom D (latitude provinsi)
+        longitude: row[4], // Kolom E (longitude provinsi)
+        jumlahPekerja: jumlahPekerjaProvinsi,
+        jumlahWelder: parseInt(row[7]),
+        jumlahFitter: parseInt(row[8]),
+        jumlahHelper: parseInt(row[9]),
+        jumlahMachinist: parseInt(row[10])
+      });
+    }
+  }
+
+  var JSONString = JSON.stringify(totalNasional);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  return JSONOutput;
+}
+
+
+function getDetailProvinsi(nidProvinsi) {
+  var sheetId = '1SS8q9DZ_GarcBcTzyF87m0FlA_tfgmu6B7wNFoRk8Mo';
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheetLokasi = id.getSheetByName('Lokasi');
+
+  var data = sheetLokasi.getDataRange().getValues();
+  var detailProvinsi = null;
+  var listKota = [];
+
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    
+    // If the province is found, store the details directly
+    if (row[0] == nidProvinsi) {
+      detailProvinsi = {
+        nid: row[0], // Column A (nid province)
+        name: row[2], // Column C (province name)
+        latitude: row[3], // Column D (latitude)
+        longitude: row[4], // Column E (longitude)
+        jumlahPekerja: row[5], // Column F (total workers)
+        jumlahWelder: row[7], // Column H
+        jumlahFitter: row[8], // Column I
+        jumlahHelper: row[9], // Column J
+        jumlahMachinist: row[10] // Column K
+      };
+    }
+
+    // Check for cities within the selected province (parent_nid of the city equals nid of the province)
+    if (row[1] == nidProvinsi && parseInt(row[6]) > 0) { // Column B (parent_nid) and Column G (total workers in the city)
+      listKota.push({
+        nid: row[0], // Column A (nid city)
+        name: row[2], // Column C (city name)
+        latitude: row[3], // Column D
+        longitude: row[4], // Column E
+        jumlahPekerja: row[6], // Column G
+        jumlahWelder: row[7], // Column H
+        jumlahFitter: row[8], // Column I
+        jumlahHelper: row[9], // Column J
+        jumlahMachinist: row[10] // Column K
+      });
+    }
+  }
+
+  // Merge province details with cities, and exclude the "provinsi" tag
+  var response = Object.assign({}, detailProvinsi, { kota: listKota });
+
+  var JSONString = JSON.stringify(response);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  return JSONOutput;
+}
+
+
+function getDetailKota(nidKota) {
+  var sheetId = '1SS8q9DZ_GarcBcTzyF87m0FlA_tfgmu6B7wNFoRk8Mo';
+  var id = SpreadsheetApp.openById(sheetId);
+  var sheetLokasi = id.getSheetByName('Lokasi');
+
+  var data = sheetLokasi.getDataRange().getValues();
+  var detailKota = null;
+
+  for (var i = 1; i < data.length; i++) {
+    var row = data[i];
+    
+    // Jika kota ditemukan
+    if (row[0] == nidKota) {
+      detailKota = {
+        nid: row[0], // Kolom A (nid kota)
+        parent_nid : row[1], // Kolom B (nid provinsi)
+        name: row[2], // Kolom C (nama kota)
+        latitude: row[3], // Kolom D
+        longitude: row[4], // Kolom E
+        jumlahPekerja: row[6], // Kolom G
+        jumlahWelder: row[7], // Kolom H
+        jumlahFitter: row[8], // Kolom I
+        jumlahHelper: row[9], // Kolom J
+        jumlahMachinist: row[10] // Kolom K
+      };
+      break; // Exit the loop once we find the city
+    }
+  }
+
+  var JSONString = JSON.stringify(detailKota);
+  var JSONOutput = ContentService.createTextOutput(JSONString);
+  JSONOutput.setMimeType(ContentService.MimeType.JSON);
+  return JSONOutput;
+}
