@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.profile.ProfileFragment"
+    android:background="@color/white">
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:visibility="gone"
+        android:elevation="4dp"/>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gradient1"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingHorizontal="15dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/title1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="15dp"
+            android:text="@string/my_profile"
+            android:textColor="@color/white"
+            android:textSize="24sp"
+            android:textStyle="italic|bold" />
+
+        <TextView
+            android:id="@+id/title2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/profil_diri_anda"
+            android:textColor="@color/white" />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="25dp"
+            android:padding="15dp"
+            android:background="@drawable/stroke2"
+            android:backgroundTint="@color/white2">
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:text="@string/id"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:id="@+id/tvNid"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/baseline_person_24" />
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+            <TableRow
+                android:layout_marginBottom="5dp">
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/baseline_local_phone_24" />
+
+                <TextView
+                    android:id="@+id/tvPhone"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+
+            <TableRow>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/baseline_location_pin_24" />
+
+                <TextView
+                    android:id="@+id/tvKota"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+            <TableRow>
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:src="@drawable/baseline_handyman_24" />
+
+                <TextView
+                    android:id="@+id/tvPosisi"
+                    android:padding="3dip"
+                    android:textSize="16sp"
+                    android:textColor="@color/black"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+        android:id="@+id/swipeRefreshLayout"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/linear2"
+        android:layout_marginHorizontal="15dp">
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+<!--            <TableRow>-->
+<!--                <View-->
+<!--                    android:layout_weight="1"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="2dp"-->
+<!--                    android:background="@color/grey"-->
+<!--                    android:layout_span="2"/>-->
+<!--            </TableRow>-->
+
+            <TableRow
+                android:id="@+id/btn_edit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp">
+
+                <ImageView
+                    android:src="@drawable/outline_edit_note_24"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"/>
+
+                <!-- TextView mengambil sisa ruang dengan layout_weight -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="@string/edit_data_diri"
+                    android:layout_weight="1"
+                    android:textColor="@color/black2"/>
+
+                <!-- ImageButton ditempatkan di ujung kanan -->
+                <ImageButton
+                    android:id="@+id/arw_edit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_chevron_right_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="end"/>
+            </TableRow>
+
+            <TableRow>
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_span="2"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/btn_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp">
+
+                <ImageView
+                    android:src="@drawable/baseline_password_24"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"/>
+
+                <!-- TextView mengambil sisa ruang dengan layout_weight -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="@string/ubah_password"
+                    android:layout_weight="1"
+                    android:textColor="@color/black2"/>
+
+                <!-- ImageButton ditempatkan di ujung kanan -->
+                <ImageButton
+                    android:id="@+id/arw_password"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_chevron_right_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="end"/>
+            </TableRow>
+
+            <TableRow>
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_span="2"/>
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/btn_logout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingVertical="20dp">
+
+                <ImageView
+                    android:src="@drawable/baseline_logout_24"
+                    android:layout_gravity="center"
+                    android:layout_marginEnd="5dp"/>
+
+                <!-- TextView mengambil sisa ruang dengan layout_weight -->
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:padding="3dip"
+                    android:text="@string/logout"
+                    android:layout_weight="1"
+                    android:textColor="@color/black2"/>
+
+                <!-- ImageButton ditempatkan di ujung kanan -->
+                <ImageButton
+                    android:id="@+id/arw_logout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/baseline_chevron_right_24"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:layout_gravity="end"/>
+            </TableRow>
+
+            <TableRow>
+                <View
+                    android:layout_weight="1"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/grey"
+                    android:layout_span="2"/>
+            </TableRow>
+
+        </TableLayout>
+
+    </LinearLayout>
+
+    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

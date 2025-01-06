@@ -1,0 +1,612 @@
+<resources>
+    <string name="app_name">androidMKP</string>
+    <string name="invalid_password">Password minimal 8 karakter!</string>
+    <string name="invalid_nid">NID tidak valid!</string>
+    <string name="password_do_not_match">Password tidak cocok!</string>
+    <string name="invalid_password_length">Password minimal 8 karakter!</string>
+    <string name="slot">Slot</string>
+    <string name="kota">Kota</string>
+    <string name="lokasi">Lokasi</string>
+    <string name="penyelenggara">Penyelenggara</string>
+    <string name="proyek">Proyek</string>
+    <string name="profile">Profile</string>
+    <string name="discover">Discover</string>
+    <string name="my_jobs">My Jobs</string>
+    <string name="home">Home</string>
+    <string name="provinsi_name">Provinsi Name</string>
+    <string name="jobs_for_you">Jobs for you</string>
+    <string name="temukan_lowongan_yang_tersedia">Temukan lowongan yang tersedia</string>
+    <string name="logout">Logout</string>
+    <string name="ubah_password">Ubah Password</string>
+    <string name="edit_data_diri">Edit Data Diri</string>
+    <string name="id">ID</string>
+    <string name="profil_diri_anda">Profil diri anda</string>
+    <string name="my_profile">My Profile</string>
+    <string name="tidak_ada_proyek">Tidak ada proyek</string>
+    <string name="pekerjaan_yang_sudah_anda_ambil">Pekerjaan yang sudah anda ambil</string>
+    <string name="back">Back</string>
+    <string name="helper">Helper</string>
+    <string name="machinist">Machinist</string>
+    <string name="fitter">Fitter</string>
+    <string name="welder">Welder</string>
+    <string name="login">Login</string>
+    <string name="password">Password</string>
+    <string name="nid">NID</string>
+    <string name="provinsi">Provinsi</string>
+    <string name="posisi">Posisi</string>
+    <string name="nomor_telepon">Nomor Telepon</string>
+    <string name="tanggal_lahir">Tanggal Lahir</string>
+    <string name="nama">Nama</string>
+    <string name="submit">Submit</string>
+    <string name="daftar">Daftar</string>
+    <string name="tanggalakhir">tanggalakhir</string>
+    <string name="colonsign">:</string>
+    <string name="tanggal_selesai">Tanggal Selesai</string>
+    <string name="dotsign">•</string>
+    <string name="tanggalmulai">tanggalmulai</string>
+    <string name="tanggal_mulai">Tanggal Mulai</string>
+    <string name="durasi">Durasi</string>
+    <string name="tanggal_penting">Tanggal Penting</string>
+    <string name="loremipsum">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</string>
+    <string name="deskripsi_proyek">Deskripsi Proyek</string>
+    <string name="kode">Kode</string>
+    <string name="konfirmasi_password_baru">Konfirmasi Password Baru</string>
+    <string name="password_baru">Password Baru</string>
+    <string name="password_lama">Password Lama</string>
+
+    <string-array name="posisi_array">
+        <item>Welder</item>
+        <item>Fitter</item>
+        <item>Helper</item>
+        <item>Machinist</item>
+    </string-array>
+
+    <string-array name="provinsi_array">
+        <item>Provinsi Aceh</item>
+        <item>Provinsi Sumatera Utara</item>
+        <item>Provinsi Sumatera Barat</item>
+        <item>Provinsi Riau</item>
+        <item>Provinsi Jambi</item>
+        <item>Provinsi Sumatera Selatan</item>
+        <item>Provinsi Bengkulu</item>
+        <item>Provinsi Lampung</item>
+        <item>Provinsi Kepulauan Bangka Belitung</item>
+        <item>Provinsi Kepulauan Riau</item>
+        <item>Provinsi DKI Jakarta</item>
+        <item>Provinsi Jawa Barat</item>
+        <item>Provinsi Jawa Tengah</item>
+        <item>Provinsi DI Yogyakarta</item>
+        <item>Provinsi Jawa Timur</item>
+        <item>Provinsi Banten</item>
+        <item>Provinsi Bali</item>
+        <item>Provinsi Nusa Tenggara Barat</item>
+        <item>Provinsi Nusa Tenggara Timur</item>
+        <item>Provinsi Kalimantan Barat</item>
+        <item>Provinsi Kalimantan Tengah</item>
+        <item>Provinsi Kalimantan Selatan</item>
+        <item>Provinsi Kalimantan Timur</item>
+        <item>Provinsi Sulawesi Utara</item>
+        <item>Provinsi Sulawesi Tengah</item>
+        <item>Provinsi Sulawesi Selatan</item>
+        <item>Provinsi Sulawesi Tenggara</item>
+        <item>Provinsi Gorontalo</item>
+        <item>Provinsi Sulawesi Barat</item>
+        <item>Provinsi Maluku</item>
+        <item>Provinsi Maluku Utara</item>
+        <item>Provinsi Papua Barat</item>
+        <item>Provinsi Papua</item>
+    </string-array>
+
+    <string-array name="kota_array">
+        <item>Kota Tangerang Selatan</item>
+        <item>Kabupaten Banyuwangi</item>
+        <item>Kabupaten Madiun</item>
+        <item>Kabupaten Ponorogo</item>
+        <item>Kabupaten Magetan</item>
+        <item>Kabupaten Pacitan</item>
+        <item>Kabupaten Ngawi</item>
+        <item>Kabupaten Bangkalan</item>
+        <item>Kabupaten Kediri</item>
+        <item>Kabupaten Bondowoso</item>
+        <item>Kabupaten Blitar</item>
+        <item>Kabupaten Trenggalek</item>
+        <item>Kabupaten Tulungagung</item>
+        <item>Kabupaten Nganjuk</item>
+        <item>Kabupaten Situbondo</item>
+        <item>Kabupaten Malang</item>
+        <item>Kabupaten Jember</item>
+        <item>Kabupaten Sumenep</item>
+        <item>Kabupaten Pasuruan</item>
+        <item>Kabupaten Pamekasan</item>
+        <item>Kabupaten Probolinggo</item>
+        <item>Kabupaten Lumajang</item>
+        <item>Kabupaten Bojonegoro</item>
+        <item>Kabupaten Tuban</item>
+        <item>Kabupaten Lamongan</item>
+        <item>Kabupaten Sidoarjo</item>
+        <item>Kabupaten Sampang</item>
+        <item>Kabupaten Mojokerto</item>
+        <item>Kabupaten Gresik</item>
+        <item>Kabupaten Jombang</item>
+        <item>Kota Mojokerto</item>
+        <item>Kota Surabaya</item>
+        <item>Kota Madiun</item>
+        <item>Kota Blitar</item>
+        <item>Kota Malang</item>
+        <item>Kota Batu</item>
+        <item>Kota Pasuruan</item>
+        <item>Kota Kediri</item>
+        <item>Kota Probolinggo</item>
+        <item>Kabupaten Batanghari</item>
+        <item>Kabupaten Bungo</item>
+        <item>Kabupaten Kerinci</item>
+        <item>Kabupaten Merangin</item>
+        <item>Kabupaten Muaro Jambi</item>
+        <item>Kabupaten Sarolangun</item>
+        <item>Kabupaten Tanjung Jabung Barat</item>
+        <item>Kabupaten Tanjung Jabung Timur</item>
+        <item>Kabupaten Tebo</item>
+        <item>Kota Jambi</item>
+        <item>Kota Sungai Penuh</item>
+        <item>Kabupaten Simeulue</item>
+        <item>Kabupaten Aceh Singkil</item>
+        <item>Kabupaten Aceh Selatan</item>
+        <item>Kabupaten Aceh Tenggara</item>
+        <item>Kabupaten Aceh Timur</item>
+        <item>Kabupaten Aceh Tengah</item>
+        <item>Kabupaten Aceh Barat</item>
+        <item>Kabupaten Aceh Besar</item>
+        <item>Kabupaten Pidie</item>
+        <item>Kabupaten Bireuen</item>
+        <item>Kabupaten Aceh Utara</item>
+        <item>Kabupaten Aceh Barat Daya</item>
+        <item>Kabupaten Gayo Lues</item>
+        <item>Kabupaten Aceh Tamiang</item>
+        <item>Kabupaten Nagan Raya</item>
+        <item>Kabupaten Aceh Jaya</item>
+        <item>Kabupaten Bener Meriah</item>
+        <item>Kabupaten Pidie Jaya</item>
+        <item>Kota Banda Aceh</item>
+        <item>Kota Sabang</item>
+        <item>Kota Langsa</item>
+        <item>Kota Lhokseumawe</item>
+        <item>Kota Subulussalam</item>
+        <item>Kabupaten Nias</item>
+        <item>Kabupaten Mandailing Natal</item>
+        <item>Kabupaten Tapanuli Selatan</item>
+        <item>Kabupaten Tapanuli Tengah</item>
+        <item>Kabupaten Tapanuli Utara</item>
+        <item>Kabupaten Toba Samosir</item>
+        <item>Kabupaten Labuhanbatu</item>
+        <item>Kabupaten Asahan</item>
+        <item>Kabupaten Simalungun</item>
+        <item>Kabupaten Dairi</item>
+        <item>Kabupaten Karo</item>
+        <item>Kabupaten Deli Serdang</item>
+        <item>Kabupaten Langkat</item>
+        <item>Kabupaten Nias Selatan</item>
+        <item>Kabupaten Humbang Hasundutan</item>
+        <item>Kabupaten Pakpak Bharat</item>
+        <item>Kabupaten Samosir</item>
+        <item>Kabupaten Serdang Bedagai</item>
+        <item>Kabupaten Batu Bara</item>
+        <item>Kabupaten Padang Lawas Utara</item>
+        <item>Kabupaten Padang Lawas</item>
+        <item>Kota Sibolga</item>
+        <item>Kota Tanjung Balai</item>
+        <item>Kota Pematang Siantar</item>
+        <item>Kota Tebing Tinggi</item>
+        <item>Kota Medan</item>
+        <item>Kota Binjai</item>
+        <item>Kota Padangsidimpuan</item>
+        <item>Kabupaten Kepulauan Mentawai</item>
+        <item>Kabupaten Pesisir Selatan</item>
+        <item>Kabupaten Solok</item>
+        <item>Kabupaten Sijunjung</item>
+        <item>Kabupaten Tanah Datar</item>
+        <item>Kabupaten Padang Pariaman</item>
+        <item>Kabupaten Agam</item>
+        <item>Kabupaten Lima Puluh Kota</item>
+        <item>Kabupaten Pasaman</item>
+        <item>Kabupaten Solok Selatan</item>
+        <item>Kabupaten Dharmasraya</item>
+        <item>Kabupaten Pasaman Barat</item>
+        <item>Kota Padang</item>
+        <item>Kota Solok</item>
+        <item>Kota Sawah Lunto</item>
+        <item>Kota Padang Panjang</item>
+        <item>Kota Bukittinggi</item>
+        <item>Kota Payakumbuh</item>
+        <item>Kota Pariaman</item>
+        <item>Kabupaten Kuantan Singingi</item>
+        <item>Kabupaten Indragiri Hulu</item>
+        <item>Kabupaten Indragiri Hilir</item>
+        <item>Kabupaten Pelalawan</item>
+        <item>Kabupaten Siak</item>
+        <item>Kabupaten Kampar</item>
+        <item>Kabupaten Rokan Hulu</item>
+        <item>Kabupaten Bengkalis</item>
+        <item>Kabupaten Rokan Hilir</item>
+        <item>Kota Pekanbaru</item>
+        <item>Kota Dumai</item>
+        <item>Kabupaten Kerinci</item>
+        <item>Kabupaten Merangin</item>
+        <item>Kabupaten Sarolangun</item>
+        <item>Kabupaten Batang Hari</item>
+        <item>Kabupaten Muaro Jambi</item>
+        <item>Kabupaten Tanjung Jabung Timur</item>
+        <item>Kabupaten Tanjung Jabung Barat</item>
+        <item>Kabupaten Tebo</item>
+        <item>Kabupaten Bungo</item>
+        <item>Kota Jambi</item>
+        <item>Kabupaten Ogan Komering Ulu</item>
+        <item>Kabupaten Ogan Komering Ilir</item>
+        <item>Kabupaten Muara Enim</item>
+        <item>Kabupaten Lahat</item>
+        <item>Kabupaten Musi Rawas</item>
+        <item>Kabupaten Musi Banyuasin</item>
+        <item>Kabupaten Banyu Asin</item>
+        <item>Kabupaten Ogan Komering Ulu Selatan</item>
+        <item>Kabupaten Ogan Komering Ulu Timur</item>
+        <item>Kabupaten Ogan Ilir</item>
+        <item>Kabupaten Empat Lawang</item>
+        <item>Kota Palembang</item>
+        <item>Kota Prabumulih</item>
+        <item>Kota Pagar Alam</item>
+        <item>Kota Lubuklinggau</item>
+        <item>Kabupaten Bengkulu Selatan</item>
+        <item>Kabupaten Rejang Lebong</item>
+        <item>Kabupaten Bengkulu Utara</item>
+        <item>Kabupaten Kaur</item>
+        <item>Kabupaten Seluma</item>
+        <item>Kabupaten Mukomuko</item>
+        <item>Kabupaten Lebong</item>
+        <item>Kabupaten Kepahiang</item>
+        <item>Kota Bengkulu</item>
+        <item>Kabupaten Lampung Barat</item>
+        <item>Kabupaten Tanggamus</item>
+        <item>Kabupaten Lampung Selatan</item>
+        <item>Kabupaten Lampung Timur</item>
+        <item>Kabupaten Lampung Tengah</item>
+        <item>Kabupaten Lampung Utara</item>
+        <item>Kabupaten Way Kanan</item>
+        <item>Kabupaten Tulangbawang</item>
+        <item>Kabupaten Pesawaran</item>
+        <item>Kota Bandar Lampung</item>
+        <item>Kota Metro</item>
+        <item>Kabupaten Bangka</item>
+        <item>Kabupaten Belitung</item>
+        <item>Kabupaten Bangka Barat</item>
+        <item>Kabupaten Bangka Tengah</item>
+        <item>Kabupaten Bangka Selatan</item>
+        <item>Kabupaten Belitung Timur</item>
+        <item>Kota Pangkal Pinang</item>
+        <item>Kabupaten Karimun</item>
+        <item>Kabupaten Bintan</item>
+        <item>Kabupaten Natuna</item>
+        <item>Kabupaten Lingga</item>
+        <item>Kota Batam</item>
+        <item>Kota Tanjung Pinang</item>
+        <item>Kabupaten Kepulauan Seribu</item>
+        <item>Kota Jakarta Selatan</item>
+        <item>Kota Jakarta Timur</item>
+        <item>Kota Jakarta Pusat</item>
+        <item>Kota Jakarta Barat</item>
+        <item>Kota Jakarta Utara</item>
+        <item>Kabupaten Bogor</item>
+        <item>Kabupaten Sukabumi</item>
+        <item>Kabupaten Cianjur</item>
+        <item>Kabupaten Bandung</item>
+        <item>Kabupaten Garut</item>
+        <item>Kabupaten Tasikmalaya</item>
+        <item>Kabupaten Ciamis</item>
+        <item>Kabupaten Kuningan</item>
+        <item>Kabupaten Cirebon</item>
+        <item>Kabupaten Majalengka</item>
+        <item>Kabupaten Sumedang</item>
+        <item>Kabupaten Indramayu</item>
+        <item>Kabupaten Subang</item>
+        <item>Kabupaten Purwakarta</item>
+        <item>Kabupaten Karawang</item>
+        <item>Kabupaten Bekasi</item>
+        <item>Kabupaten Bandung Barat</item>
+        <item>Kota Bogor</item>
+        <item>Kota Sukabumi</item>
+        <item>Kota Bandung</item>
+        <item>Kota Cirebon</item>
+        <item>Kota Bekasi</item>
+        <item>Kota Depok</item>
+        <item>Kota Cimahi</item>
+        <item>Kota Tasikmalaya</item>
+        <item>Kota Banjar</item>
+        <item>Kabupaten Cilacap</item>
+        <item>Kabupaten Banyumas</item>
+        <item>Kabupaten Purbalingga</item>
+        <item>Kabupaten Banjarnegara</item>
+        <item>Kabupaten Kebumen</item>
+        <item>Kabupaten Purworejo</item>
+        <item>Kabupaten Wonosobo</item>
+        <item>Kabupaten Magelang</item>
+        <item>Kabupaten Boyolali</item>
+        <item>Kabupaten Klaten</item>
+        <item>Kabupaten Sukoharjo</item>
+        <item>Kabupaten Wonogiri</item>
+        <item>Kabupaten Karanganyar</item>
+        <item>Kabupaten Sragen</item>
+        <item>Kabupaten Grobogan</item>
+        <item>Kabupaten Blora</item>
+        <item>Kabupaten Rembang</item>
+        <item>Kabupaten Pati</item>
+        <item>Kabupaten Kudus</item>
+        <item>Kabupaten Jepara</item>
+        <item>Kabupaten Demak</item>
+        <item>Kabupaten Semarang</item>
+        <item>Kabupaten Temanggung</item>
+        <item>Kabupaten Kendal</item>
+        <item>Kabupaten Batang</item>
+        <item>Kabupaten Pekalongan</item>
+        <item>Kabupaten Pemalang</item>
+        <item>Kabupaten Tegal</item>
+        <item>Kabupaten Brebes</item>
+        <item>Kota Magelang</item>
+        <item>Kota Surakarta</item>
+        <item>Kota Salatiga</item>
+        <item>Kota Semarang</item>
+        <item>Kota Pekalongan</item>
+        <item>Kota Tegal</item>
+        <item>Kabupaten Kulon Progo</item>
+        <item>Kabupaten Bantul</item>
+        <item>Kabupaten Gunung Kidul</item>
+        <item>Kota Yogyakarta</item>
+        <item>Kabupaten Pandeglang</item>
+        <item>Kabupaten Lebak</item>
+        <item>Kabupaten Tangerang</item>
+        <item>Kabupaten Serang</item>
+        <item>Kota Tangerang</item>
+        <item>Kota Cilegon</item>
+        <item>Kota Serang</item>
+        <item>Kabupaten Jembrana</item>
+        <item>Kabupaten Tabanan</item>
+        <item>Kabupaten Badung</item>
+        <item>Kabupaten Gianyar</item>
+        <item>Kabupaten Klungkung</item>
+        <item>Kabupaten Bangli</item>
+        <item>Kabupaten Karang Asem</item>
+        <item>Kabupaten Buleleng</item>
+        <item>Kota Denpasar</item>
+        <item>Kabupaten Lombok Barat</item>
+        <item>Kabupaten Lombok Tengah</item>
+        <item>Kabupaten Lombok Timur</item>
+        <item>Kabupaten Sumbawa</item>
+        <item>Kabupaten Dompu</item>
+        <item>Kabupaten Bima</item>
+        <item>Kabupaten Sumbawa Barat</item>
+        <item>Kota Mataram</item>
+        <item>Kota Bima</item>
+        <item>Kabupaten Sumba Barat</item>
+        <item>Kabupaten Sumba Timur</item>
+        <item>Kabupaten Kupang</item>
+        <item>Kabupaten Timor Tengah Selatan</item>
+        <item>Kabupaten Timor Tengah Utara</item>
+        <item>Kabupaten Belu</item>
+        <item>Kabupaten Alor</item>
+        <item>Kabupaten Lembata</item>
+        <item>Kabupaten Flores Timur</item>
+        <item>Kabupaten Sikka</item>
+        <item>Kabupaten Ende</item>
+        <item>Kabupaten Ngada</item>
+        <item>Kabupaten Manggarai</item>
+        <item>Kabupaten Rote Ndao</item>
+        <item>Kabupaten Manggarai Barat</item>
+        <item>Kabupaten Sumba Tengah</item>
+        <item>Kabupaten Sumba Barat Daya</item>
+        <item>Kabupaten Nagekeo</item>
+        <item>Kabupaten Manggarai Timur</item>
+        <item>Kota Kupang</item>
+        <item>Kabupaten Sambas</item>
+        <item>Kabupaten Bengkayang</item>
+        <item>Kabupaten Landak</item>
+        <item>Kabupaten Pontianak</item>
+        <item>Kabupaten Sanggau</item>
+        <item>Kabupaten Ketapang</item>
+        <item>Kabupaten Sintang</item>
+        <item>Kabupaten Kapuas Hulu</item>
+        <item>Kabupaten Sekadau</item>
+        <item>Kabupaten Melawi</item>
+        <item>Kabupaten Kayong Utara</item>
+        <item>Kabupaten Kubu Raya</item>
+        <item>Kota Pontianak</item>
+        <item>Kota Singkawang</item>
+        <item>Kabupaten Kotawaringin Barat</item>
+        <item>Kabupaten Kotawaringin Timur</item>
+        <item>Kabupaten Kapuas</item>
+        <item>Kabupaten Barito Selatan</item>
+        <item>Kabupaten Barito Utara</item>
+        <item>Kabupaten Sukamara</item>
+        <item>Kabupaten Lamandau</item>
+        <item>Kabupaten Seruyan</item>
+        <item>Kabupaten Katingan</item>
+        <item>Kabupaten Pulang Pisau</item>
+        <item>Kabupaten Gunung Mas</item>
+        <item>Kabupaten Barito Timur</item>
+        <item>Kabupaten Murung Raya</item>
+        <item>Kota Palangka Raya</item>
+        <item>Kabupaten Tanah Laut</item>
+        <item>Kabupaten Kota Baru</item>
+        <item>Kabupaten Banjar</item>
+        <item>Kabupaten Barito Kuala</item>
+        <item>Kabupaten Tapin</item>
+        <item>Kabupaten Hulu Sungai Selatan</item>
+        <item>Kabupaten Hulu Sungai Tengah</item>
+        <item>Kabupaten Hulu Sungai Utara</item>
+        <item>Kabupaten Tabalong</item>
+        <item>Kabupaten Tanah Bumbu</item>
+        <item>Kabupaten Balangan</item>
+        <item>Kota Banjarmasin</item>
+        <item>Kota Banjar Baru</item>
+        <item>Kabupaten Paser</item>
+        <item>Kabupaten Kutai Barat</item>
+        <item>Kabupaten Kutai Kartanegara</item>
+        <item>Kabupaten Kutai Timur</item>
+        <item>Kabupaten Berau</item>
+        <item>Kabupaten Malinau</item>
+        <item>Kabupaten Bulungan</item>
+        <item>Kabupaten Nunukan</item>
+        <item>Kabupaten Penajam Paser Utara</item>
+        <item>Kabupaten Tana Tidung</item>
+        <item>Kota Balikpapan</item>
+        <item>Kota Samarinda</item>
+        <item>Kota Tarakan</item>
+        <item>Kota Bontang</item>
+        <item>Kabupaten Bolaang Mongondow</item>
+        <item>Kabupaten Minahasa</item>
+        <item>Kabupaten Kepulauan Sangihe</item>
+        <item>Kabupaten Kepulauan Talaud</item>
+        <item>Kabupaten Minahasa Selatan</item>
+        <item>Kabupaten Minahasa Utara</item>
+        <item>Kabupaten Bolaang Mongondow Utara</item>
+        <item>Kabupaten Siau Tagulandang Biaro</item>
+        <item>Kabupaten Minahasa Tenggara</item>
+        <item>Kota Manado</item>
+        <item>Kota Bitung</item>
+        <item>Kota Tomohon</item>
+        <item>Kota Kotamobagu</item>
+        <item>Kabupaten Banggai Kepulauan</item>
+        <item>Kabupaten Banggai</item>
+        <item>Kabupaten Morowali</item>
+        <item>Kabupaten Poso</item>
+        <item>Kabupaten Donggala</item>
+        <item>Kabupaten Toli-Toli</item>
+        <item>Kabupaten Buol</item>
+        <item>Kabupaten Parigi Moutong</item>
+        <item>Kabupaten Tojo Una-Una</item>
+        <item>Kota Palu</item>
+        <item>Kabupaten Selayar</item>
+        <item>Kabupaten Bulukumba</item>
+        <item>Kabupaten Bantaeng</item>
+        <item>Kabupaten Jeneponto</item>
+        <item>Kabupaten Takalar</item>
+        <item>Kabupaten Gowa</item>
+        <item>Kabupaten Sinjai</item>
+        <item>Kabupaten Maros</item>
+        <item>Kabupaten Pangkajene Dan Kepulauan</item>
+        <item>Kabupaten Barru</item>
+        <item>Kabupaten Bone</item>
+        <item>Kabupaten Soppeng</item>
+        <item>Kabupaten Wajo</item>
+        <item>Kabupaten Sidenreng Rappang</item>
+        <item>Kabupaten Pinrang</item>
+        <item>Kabupaten Enrekang</item>
+        <item>Kabupaten Luwu</item>
+        <item>Kabupaten Tana Toraja</item>
+        <item>Kabupaten Luwu Utara</item>
+        <item>Kabupaten Luwu Timur</item>
+        <item>Kota Makassar</item>
+        <item>Kota Pare-Pare</item>
+        <item>Kota Palopo</item>
+        <item>Kabupaten Buton</item>
+        <item>Kabupaten Muna</item>
+        <item>Kabupaten Konawe</item>
+        <item>Kabupaten Kolaka</item>
+        <item>Kabupaten Konawe Selatan</item>
+        <item>Kabupaten Bombana</item>
+        <item>Kabupaten Wakatobi</item>
+        <item>Kabupaten Kolaka Utara</item>
+        <item>Kabupaten Buton Utara</item>
+        <item>Kabupaten Konawe Utara</item>
+        <item>Kota Kendari</item>
+        <item>Kota Bau-Bau</item>
+        <item>Kabupaten Boalemo</item>
+        <item>Kabupaten Gorontalo</item>
+        <item>Kabupaten Pohuwato</item>
+        <item>Kabupaten Bone Bolango</item>
+        <item>Kabupaten Gorontalo Utara</item>
+        <item>Kota Gorontalo</item>
+        <item>Kabupaten Majene</item>
+        <item>Kabupaten Polewali Mandar</item>
+        <item>Kabupaten Mamasa</item>
+        <item>Kabupaten Mamuju</item>
+        <item>Kabupaten Mamuju Utara</item>
+        <item>Kabupaten Maluku Tenggara Barat</item>
+        <item>Kabupaten Maluku Tenggara</item>
+        <item>Kabupaten Maluku Tengah</item>
+        <item>Kabupaten Buru Selatan</item>
+        <item>Kabupaten Kepulauan Aru</item>
+        <item>Kabupaten Seram Bagian Barat</item>
+        <item>Kabupaten Seram Bagian Timur</item>
+        <item>Kota Ambon</item>
+        <item>KotaTual</item>
+        <item>Kabupaten Halmahera Barat</item>
+        <item>Kabupaten Halmahera Tengah</item>
+        <item>Kabupaten Kepulauan Sula</item>
+        <item>Kabupaten Halmahera Selatan</item>
+        <item>Kabupaten Halmahera Utara</item>
+        <item>Kabupaten Halmahera Timur</item>
+        <item>Kota Ternate</item>
+        <item>Kota Tidore Kepulauan</item>
+        <item>Kabupaten Fakfak</item>
+        <item>Kabupaten Kaimana</item>
+        <item>Kabupaten Teluk Wondama</item>
+        <item>Kabupaten Teluk Bintuni</item>
+        <item>Kabupaten Manokwari</item>
+        <item>Kabupaten Sorong Selatan</item>
+        <item>Kota Sorong</item>
+        <item>Kabupaten Raja Ampat</item>
+        <item>Kabupaten Sorong</item>
+        <item>Kabupaten Merauke</item>
+        <item>Kabupaten Jayawijaya</item>
+        <item>Kabupaten Jayapura</item>
+        <item>Kabupaten Nabire</item>
+        <item>Kabupaten Kepulauan Yapen</item>
+        <item>Kabupaten Biak Numfor</item>
+        <item>Kabupaten Paniai</item>
+        <item>Kabupaten Puncak Jaya</item>
+        <item>Kabupaten Mimika</item>
+        <item>Kabupaten Boven Digoel</item>
+        <item>Kabupaten Mappi</item>
+        <item>Kabupaten Asmat</item>
+        <item>Kabupaten Yahukimo</item>
+        <item>Kabupaten Pegunungan Bintang</item>
+        <item>Kabupaten Tolikara</item>
+        <item>Kabupaten Sarmi</item>
+        <item>Kabupaten Keerom</item>
+        <item>Kabupaten Waropen</item>
+        <item>Kabupaten Supiori</item>
+        <item>Kabupaten Mamberamo Raya</item>
+        <item>Kota Jayapura</item>
+        <item>Kabupaten Labuhanbatu Utara</item>
+        <item>Kabupaten Labuhanbatu Selatan</item>
+        <item>Kabupaten Nias Utara</item>
+        <item>Kabupaten Nias Barat</item>
+        <item>Kota Gunungsitoli</item>
+        <item>Kabupaten Kepulauan Meranti</item>
+        <item>Kota Sungai Penuh</item>
+        <item>Kabupaten Bengkulu Tengah</item>
+        <item>Kabupaten Tulangbawang Barat</item>
+        <item>Kabupaten Pringsewu</item>
+        <item>Kabupaten Mesuji</item>
+        <item>Kabupaten Lingga</item>
+        <item> Kabupaten Anambas</item>
+        <item>Kabupaten Sleman</item>
+        <item>Kota Tangerang Selatan</item>
+        <item>Kabupaten Lombok Utara</item>
+        <item>Kabupaten Sabu Raijua</item>
+        <item>Kabupaten Bolang Mongondow Timur</item>
+        <item>Kabupaten Bolang Mongondow Selatan</item>
+        <item>Kabupaten Sigi</item>
+        <item>Kabupaten Toraja Utara</item>
+        <item>Kabupaten Maluku Barat Daya</item>
+        <item>Kabupaten Buru</item>
+        <item>Kabupaten Pulau Morota</item>
+        <item>Kabupaten Tambrauw</item>
+        <item>Kabupaten Maybat</item>
+        <item>Kabupaten Memberamo Tengah</item>
+        <item>Kabupaten Yalimo</item>
+        <item>Kabupaten Lanny Jaya</item>
+        <item>Kabupaten Nduga</item>
+        <item>Kabupaten Puncak</item>
+        <item>Kabupaten Dogiyai</item>
+        <item>Kabupaten Intan Jaya</item>
+        <item>Kabupaten Deiyai</item>
+    </string-array>
+</resources>
